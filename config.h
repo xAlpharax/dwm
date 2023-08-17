@@ -5,8 +5,8 @@ static const unsigned int gappx     = 4;         /* tiling spacing */
 static const int showbar            = 1;         /* 0 means no bar */
 static const int topbar             = 1;         /* 0 means bottom bar */
 
-#define ICONSIZE 16   /* icon size in pixels */
-#define ICONSPACING 5 /* space between icon and title */
+#define ICONSIZE 17   /* icon size in pixels */
+#define ICONSPACING 6 /* space between icon and title */
 //#define ICONSIZE bh       /* make icon size equals to bar height */
 //#define ICONSIZE (bh - 4) /* or adaptively preserve 2 pixels each side */
 
@@ -100,6 +100,8 @@ static Key keys[] = {
 
     { MODKEY,                       XK_Right,  viewnext,       {0} },
     { MODKEY,                       XK_Left,   viewprev,       {0} },
+
+    { MODKEY,                       XK_s,      togglesticky,   {0} },
 
     TAGKEYS(                        XK_1,                      0)
     TAGKEYS(                        XK_2,                      1)
