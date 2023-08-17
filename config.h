@@ -4,8 +4,12 @@ static const unsigned int snap      = 4;         /* snap pixel */
 static const unsigned int gappx     = 4;         /* tiling spacing */
 static const int showbar            = 1;         /* 0 means no bar */
 static const int topbar             = 1;         /* 0 means bottom bar */
-#define ICONSIZE 16   /* icon size */
+
+#define ICONSIZE 16   /* icon size in pixels */
 #define ICONSPACING 5 /* space between icon and title */
+//#define ICONSIZE bh       /* make icon size equals to bar height */
+//#define ICONSIZE (bh - 4) /* or adaptively preserve 2 pixels each side */
+
 static const char *fonts[]          = { "inconsolata:pixelsize=17" };
 static const char dmenufont[]       = "inconsolata:pixelsize=17";
 
