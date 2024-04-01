@@ -5,11 +5,11 @@ static const unsigned int gappx     = 4;         /* tiling spacing */
 static const int showbar            = 1;         /* 0 means no bar */
 static const int topbar             = 1;         /* 0 means bottom bar */
 
-static const char *fonts[]          = { "inconsolata:pixelsize=17" };
-static const char dmenufont[]       = "inconsolata:pixelsize=17";
+static const char *fonts[]          = { "Inconsolata:pixelsize=17" };
+static const char dmenufont[]       = "Inconsolata:pixelsize=17";
 
 static const char col_gray1[]       = "#0a001f"; // darkk purple
-static const char col_gray2[]       = "#6660d2"; // light purple
+static const char col_gray2[]       = "#828ff9"; // light purple
 static const char col_cyan[]        = "#ace6f0"; // light cyan
 
 static const char *colors[][3]      = {
@@ -62,41 +62,38 @@ static const char *termcmd[]  = { "st", NULL };
 
 #include "movestack.c"
 static Key keys[] = {
-    /* modifier                     key        function        argument */
-    { MODKEY,                       XK_Return, spawn,          {.v = termcmd }      },
-    { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd }     },
-    { MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("brave")       },
-    { MODKEY,                       XK_f,      spawn,          SHCMD("firefox")     },
-    { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("librewolf")   },
-    { MODKEY,                       XK_d,      spawn,          SHCMD("discord")     },
-    { MODKEY|ShiftMask,             XK_x,      spawn,          SHCMD("xkill")       },
-    { MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("bmenu")       },
-    { MODKEY,                       XK_q,      spawn,          SHCMD("pmenu")       },
+    /* modifier                     key             function        argument             */
+    { MODKEY,                       XK_p,           spawn,          {.v = dmenucmd }     },
+    { MODKEY,                       XK_Return,      spawn,          {.v = termcmd }      },
+    { MODKEY|ShiftMask,             XK_BackSpace,   spawn,          SHCMD("lock")        },
+    { MODKEY|ShiftMask,             XK_x,           spawn,          SHCMD("xkill")       },
+    { MODKEY|ShiftMask,             XK_b,           spawn,          SHCMD("bmenu")       },
+    { MODKEY,                       XK_q,           spawn,          SHCMD("pmenu")       },
 
-    { MODKEY,                       XK_Tab,    focusstack,     {.i = +1 } },
+    { MODKEY,                       XK_Tab,         focusstack,     {.i = +1 } },
 
-    { MODKEY,                       XK_b,      togglebar,      {0} },
-    { MODKEY,                       XK_m,      togglefullscr,  {0} },
-    { MODKEY,                       XK_x,      killclient,     {0} },
+    { MODKEY,                       XK_b,           togglebar,      {0} },
+    { MODKEY,                       XK_m,           togglefullscr,  {0} },
+    { MODKEY,                       XK_x,           killclient,     {0} },
 
-    { MODKEY,                       XK_k,      incnmaster,     {.i = +1 } },
-    { MODKEY,                       XK_j,      incnmaster,     {.i = -1 } },
-    { MODKEY|ShiftMask,             XK_k,      movestack,      {.i = +1 } },
-    { MODKEY|ShiftMask,             XK_j,      movestack,      {.i = -1 } },
+    { MODKEY,                       XK_k,           incnmaster,     {.i = +1 } },
+    { MODKEY,                       XK_j,           incnmaster,     {.i = -1 } },
+    { MODKEY|ShiftMask,             XK_k,           movestack,      {.i = +1 } },
+    { MODKEY|ShiftMask,             XK_j,           movestack,      {.i = -1 } },
 
-    { MODKEY,                       XK_h,      setmfact,       {.f = -0.01} },
-    { MODKEY,                       XK_l,      setmfact,       {.f = +0.01} },
+    { MODKEY,                       XK_h,           setmfact,       {.f = -0.01} },
+    { MODKEY,                       XK_l,           setmfact,       {.f = +0.01} },
 
-    { MODKEY,                       XK_space,  setlayout,      {.v = &layouts[0]} },
-    { MODKEY|ShiftMask,             XK_space,  setlayout,      {.v = &layouts[1]} },
-    { MODKEY|ControlMask,           XK_space,  setlayout,      {.v = &layouts[2]} },
+    { MODKEY,                       XK_space,       setlayout,      {.v = &layouts[0]} },
+    { MODKEY|ShiftMask,             XK_space,       setlayout,      {.v = &layouts[1]} },
+    { MODKEY|ControlMask,           XK_space,       setlayout,      {.v = &layouts[2]} },
 
-    { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
+    { MODKEY,                       XK_0,           view,           {.ui = ~0 } },
 
-    { MODKEY,                       XK_Right,  viewnext,       {0} },
-    { MODKEY,                       XK_Left,   viewprev,       {0} },
+    { MODKEY,                       XK_Right,       viewnext,       {0} },
+    { MODKEY,                       XK_Left,        viewprev,       {0} },
 
-    { MODKEY,                       XK_s,      togglesticky,   {0} },
+    { MODKEY,                       XK_s,           togglesticky,   {0} },
 
     TAGKEYS(                        XK_1,                      0)
     TAGKEYS(                        XK_2,                      1)
