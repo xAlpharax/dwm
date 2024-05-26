@@ -5,8 +5,8 @@ static const unsigned int gappx     = 4;         /* tiling spacing */
 static const int showbar            = 1;         /* 0 means no bar */
 static const int topbar             = 1;         /* 0 means bottom bar */
 
-static const char *fonts[]          = { "Inconsolata:pixelsize=17" };
-static const char dmenufont[]       = "Inconsolata:pixelsize=17";
+static const char *fonts[]          = { "Inconsolata:pixelsize=17:antialias=true:autohint=true" };
+static const char dmenufont[]       = "Inconsolata:pixelsize=17:antialias=true:autohint=true";
 
 static const char col_gray1[]       = "#0a001f"; // darkk purple
 static const char col_gray2[]       = "#828ff9"; // light purple
@@ -24,8 +24,8 @@ static const char *alttags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
     /* xprop(1):
-    *	WM_CLASS(STRING) = instance, class
-    *	WM_NAME(STRING) = title
+    *   WM_CLASS(STRING) = instance, class
+    *   WM_NAME(STRING) = title
     */
 
     /* class      instance    title       tags mask     isfloating   monitor */
@@ -109,7 +109,7 @@ static Key keys[] = {
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static Button buttons[] = {
-	/* click                event mask      button          function        argument */
+    /* click                event mask      button          function        argument */
     { ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
     { ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
     { ClkWinTitle,          0,              Button2,        zoom,           {0} },
